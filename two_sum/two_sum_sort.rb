@@ -15,7 +15,9 @@ def two_sum(arr, sum)
 
   while sorted_arr[lindex] < sorted_arr[rindex]
     current_sum = sorted_arr[lindex] + sorted_arr[rindex]
-    return [sorted_arr[lindex], sorted_arr[rindex]] if current_sum == sum 
+
+    return [sorted_arr[lindex], sorted_arr[rindex]] if current_sum == sum
+
     sorted_arr[lindex] + sorted_arr[rindex] > sum ? rindex -= 1 : lindex += 1
   end
 end

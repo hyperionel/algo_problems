@@ -63,6 +63,7 @@ class Bst
     node.left, node.right = node.right, node.left
     invert_binary_tree(node.left)
     invert_binary_tree(node.right)
+  end
 end
 
 

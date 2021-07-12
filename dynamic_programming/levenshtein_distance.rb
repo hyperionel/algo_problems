@@ -34,5 +34,26 @@ def levenshtein_distance(str1, str2)
 
   even_edits = Array(0..small.length + 1)
   odd_edits = Array.new(small.lenghth + 1, nil)
+
+  (1..big.length + 1).each do |i|
+    if i % 2 == 1
+      current_edits = odd_edits
+      previous_edits = even_edits
+    else
+      current_edits = even_edits
+      previous_edits = odd_edits
+    end
+
+    current_edits[0] = i
+    (1..small.length + 1).each do |j|
+      if big[i - 1] == small[j - 1]
+        current_edits[j] = previous_edits[j - 1]
+      else
+        current_edits[j] = 1 + [previous_edits[j - 1], previous_edits[j], current_edits[j - 1]].min
+      end
+    end
+  end
+
+  big.length % 2 == 0 ? even_edits[-1] : odd_edits[-1]
 end
 

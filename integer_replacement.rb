@@ -9,7 +9,7 @@ def integer_replacement(n)
   return integer_replacement_helper(n, op_counter)
 end
 
-# Time O(n^2) | Space O(n^2)
+# Time O(n) | Space O(n)
 def integer_replacement_helper(n, op_counter)
   return op_counter if n == 1
   op_counter += 1

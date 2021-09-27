@@ -119,3 +119,12 @@ class DoublyLinkedList
     node.next = nil
   end
 end
+
+class Node
+  attr_accessor :next, :prev
+
+  def initialize(next = nil, prev = nil)
+    @next = next
+    @prev = prev
+  end
+end
